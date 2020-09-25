@@ -219,8 +219,8 @@ endif()
 set(QTDEFINES_FILE ${CMAKE_CURRENT_BINARY_DIR}/qtdefines)
 
 # Temporarily disabled due to LLVM 19 clang heap corruption crash when parsing Qt6 headers
-# add_subdirectory(qtcore)
-# macro_optional_add_bindings(Qt6Gui_FOUND "QtGui" qtgui)
+add_subdirectory(qtcore)
+macro_optional_add_bindings(Qt6Gui_FOUND "QtGui" qtgui)
 macro_optional_add_bindings(Qt6Network_FOUND "QtNetwork" qtnetwork)
 macro_optional_add_bindings(Qt6OpenGL_FOUND "QtOpenGL" qtopengl)
 macro_optional_add_bindings(Qt6Pdf_FOUND "QtPdf" qtpdf)

@@ -51,6 +51,13 @@
     <signature>.*operator&lt;&lt;\(.*const objc_object\*\)$</signature>
     <signature>.*qt_mac_is_metal.*</signature>
     <signature>.*qt_mac_clear_status_text.*</signature>
+
+    <!-- Qt6 compatibility: textElideMode doesn't exist in QStylePlugin -->
+    <signature>.*QStylePlugin::textElideMode.*</signature>
+    
+    <!-- Qt 6.11 compatibility: these members/properties don't exist -->
+    <signature>.*QStylePainter::decorationSize.*</signature>
+    <signature>.*QStylePlugin::decorationAlignment.*</signature>
   </exclude>
   <functions>
     <!-- include functions starting with 'q' -->

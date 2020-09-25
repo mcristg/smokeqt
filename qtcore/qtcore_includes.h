@@ -15,3 +15,21 @@
 #include <QtCore/qurl.h>
 #include <QtCore/quuid.h>
 
+// Additional includes for complete type definitions (Qt 6.11 compatibility)
+#include <QtCore/qtimezone.h>
+#include <QtCore/qmetaobject.h>
+#include <QtCore/qline.h>
+#include <QtCore/qbitarray.h>
+#include <QtCore/qlocale.h>
+#include <QtCore/qeasingcurve.h>
+#include <QtCore/qjsonvalue.h>
+#include <QtCore/qjsonobject.h>
+#include <QtCore/qjsonarray.h>
+#include <QtCore/qjsondocument.h>
+#include <QtCore/qmargins.h>
+#include <QtCore/qiodevice.h>
+#include <QtCore/qcborarray.h>
+#include <QtCore/qcbormap.h>
+#include <QtCore/qcborvalue.h>
+#include <QtCore/qproperty.h>
+#include <QtCore/qabstractitemmodel.h>  // Defines QModelIndex, QPersistentModelIndex

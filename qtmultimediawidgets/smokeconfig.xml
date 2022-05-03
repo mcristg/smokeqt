@@ -34,15 +34,15 @@
 
         <signature>^bool qt_sendSpontaneousEvent\(.*\)$</signature>
         <signature>^void qt_format_text\(.*\)$</signature>
-
+		
         <!-- these next four functions are delcaraed as friend functions, but
              are not exposed externally -->
         <signature>^bool qt_closestLeaf\(const QGraphicsItem\*, const QGraphicsItem\*\)$</signature>
         <signature>^bool qt_closestItemFirst\(const QGraphicsItem\*, const QGraphicsItem\*\)$</signature>
         <signature>^void qt_mac_emit_menuSignals\(QMenu\*, bool\)$</signature>
         <signature>^void qt_mac_menu_emit_hovered\(QMenu\*, QAction\*\)$</signature>
-		
-		<signature>^(::)?QDataStream.*&amp;.*operator(&lt;&lt;|&gt;&gt;)\(.*QDataStream.*&amp;.*\)</signature>
+	
+	<signature>^(::)?QDataStream.*&amp;.*operator(&lt;&lt;|&gt;&gt;)\(.*QDataStream.*&amp;.*\)</signature>
 
         <!-- Ignore Mac types -->
         <signature>.*operator&lt;&lt;\(.*const objc_object\*\)$</signature>

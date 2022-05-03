@@ -30,8 +30,8 @@
         <signature>^bool qt_sendSpontaneousEvent\(.*\)$</signature>
 
         <signature>.*QExplicitlySharedDataPointer.*</signature>
-		
-		<signature>^(::)?QDataStream.*&amp;.*operator(&lt;&lt;|&gt;&gt;)\(.*QDataStream.*&amp;.*\)</signature>
+	
+	<signature>^(::)?QDataStream.*&amp;.*operator(&lt;&lt;|&gt;&gt;)\(.*QDataStream.*&amp;.*\)</signature>
 
         <!-- Ignore Mac types -->
         <signature>.*operator&lt;&lt;\(.*const objc_object\*\)$</signature>
@@ -46,9 +46,9 @@
     <classList>
         <class>QAbstractMessageHandler</class>
         <class>QAbstractUriResolver</class>
-        <class>QAbstractXmlNodeModel</class>
+        <!-- <class>QAbstractXmlNodeModel</class> -->
         <class>QAbstractXmlReceiver</class>
-        <class>QSimpleXmlNodeModel</class>
+        <!-- <class>QSimpleXmlNodeModel</class> -->
         <class>QSourceLocation</class>
         <class>QXmlFormatter</class>
         <class>QXmlItem</class>

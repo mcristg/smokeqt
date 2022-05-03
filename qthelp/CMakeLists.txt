@@ -10,7 +10,6 @@ IF(CMAKE_CXX_FLAGS MATCHES "-fvisibility")
     ADD_DEFINITIONS(-DGCC_VISIBILITY)
 ENDIF(CMAKE_CXX_FLAGS MATCHES "-fvisibility")
 
-# kde4_add_library(smokeqthelp SHARED ${smokeqthelp_LIB_SRCS})
 add_library(smokeqthelp SHARED ${smokeqthelp_LIB_SRCS})
 
 target_link_libraries(smokeqthelp 
@@ -29,9 +28,9 @@ target_link_libraries(smokeqthelp
 
 set_target_properties(smokeqthelp
     PROPERTIES
-    VERSION 3.0.0
-    SOVERSION 3
-    CXX_STANDARD 11
+    VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}
+    SOVERSION ${VERSION_MAJOR}
+    CXX_STANDARD 14
 )
 
 install(TARGETS smokeqthelp LIBRARY DESTINATION ${LIB_INSTALL_DIR}
@@ -39,14 +38,13 @@ install(TARGETS smokeqthelp LIBRARY DESTINATION ${LIB_INSTALL_DIR}
     RUNTIME DESTINATION bin)
 
 if (WIN32)
-	# Realign the stack, for compatibility with an older ABI.
-	if(CMAKE_COMPILER_IS_GNUCXX)
-		set_target_properties(smokeqthelp PROPERTIES COMPILE_FLAGS -mstackrealign)
-	endif()
+    # Realign the stack, for compatibility with an older ABI.
+    if (CMAKE_COMPILER_IS_GNUCXX)
+	set_target_properties(smokeqthelp PROPERTIES COMPILE_FLAGS -mstackrealign)
+    endif()
 
     # Get rid of the "lib" prefix on archives/DLLs in Windows.
-    set_target_properties(smokeqthelp
-        PROPERTIES PREFIX "" IMPORT_PREFIX "")
+    set_target_properties(smokeqthelp PROPERTIES PREFIX "" IMPORT_PREFIX "")
 endif (WIN32)
 
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../qthelp_smoke.h DESTINATION include/smoke)

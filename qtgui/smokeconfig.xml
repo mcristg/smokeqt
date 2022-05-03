@@ -38,8 +38,8 @@
         <signature>^QImage&amp;+ QImage::rgbSwapped\(\)$</signature>
 
         <signature>.*HDC.*\* qt_win_display_dc\(\)$</signature>
-		
-		<signature>^(::)?QDataStream.*&amp;.*operator(&lt;&lt;|&gt;&gt;)\(.*QDataStream.*&amp;.*\)</signature>
+
+	<signature>^(::)?QDataStream.*&amp;.*operator(&lt;&lt;|&gt;&gt;)\(.*QDataStream.*&amp;.*\)</signature>
 
         <!-- Ignore Mac types -->
         <signature>.*operator&lt;&lt;\(.*const objc_object\*\)$</signature>
@@ -60,7 +60,6 @@
         <class>QAccessible::State</class>
         <class>QAccessibleEditableTextInterface</class>
         <class>QAccessibleEvent</class>
-        <class>QAccessibleImageInterface</class>
         <class>QAccessibleInterface</class>
         <class>QAccessibleObject</class>
         <class>QAccessibleStateChangeEvent</class>
@@ -81,6 +80,8 @@
         <class>QClipboard</class>
         <class>QCloseEvent</class>
         <class>QColor</class>
+	<class>QColorSpace</class>
+	<class>QColorTransform</class>
         <class>QConicalGradient</class>
         <class>QContextMenuEvent</class>
         <class>QCursor</class>
@@ -205,7 +206,6 @@
         <class>QPixmapCache::Key</class>
         <class>QPlatformGraphicsBuffer</class>
         <class>QPlatformSurfaceEvent</class>
-        <class>QPlatformSystemTrayIcon</class>
         <class>QPointingDeviceUniqueId</class>
         <class>QPolygon</class>
         <class>QPolygonF</class>
@@ -273,12 +273,15 @@
         <class>QVector2D</class>
         <class>QVector3D</class>
         <class>QVector4D</class>
+	<class>QVulkanDeviceFunctions</class>
+	<class>QVulkanFunctions</class>
+	<class>QVulkanInstance</class>
+	<class>QVulkanWindow</class>
+	<class>QVulkanWindowRenderer</class>
         <class>QWhatsThisClickedEvent</class>
         <class>QWheelEvent</class>
         <class>QWindow</class>
         <class>QWindowStateChangeEvent</class>
-		
-		<class>QCborSimpleType</class>		
-		
+	<class>QCborSimpleType</class>		
     </classList>
 </config>

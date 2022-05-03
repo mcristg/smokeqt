@@ -10,16 +10,15 @@ IF(CMAKE_CXX_FLAGS MATCHES "-fvisibility")
     ADD_DEFINITIONS(-DGCC_VISIBILITY)
 ENDIF(CMAKE_CXX_FLAGS MATCHES "-fvisibility")
 
-# kde4_add_library(smokeqtcore SHARED ${smokeqtcore_LIB_SRCS})
 add_library(smokeqtcore SHARED ${smokeqtcore_LIB_SRCS})
 
 target_link_libraries(smokeqtcore Qt5::Core ${SMOKE_BASE_LIBRARY})
 
 set_target_properties(smokeqtcore
     PROPERTIES
-    VERSION 3.0.0
-    SOVERSION 3
-    CXX_STANDARD 11
+    VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}
+    SOVERSION ${VERSION_MAJOR}
+    CXX_STANDARD 14
 )
 
 install(TARGETS smokeqtcore LIBRARY DESTINATION ${LIB_INSTALL_DIR}
@@ -27,14 +26,13 @@ install(TARGETS smokeqtcore LIBRARY DESTINATION ${LIB_INSTALL_DIR}
     RUNTIME DESTINATION bin)
 
 if (WIN32)
-	# Realign the stack, for compatibility with an older ABI.
-	if(CMAKE_COMPILER_IS_GNUCXX)
-		set_target_properties(smokeqtcore PROPERTIES COMPILE_FLAGS -mstackrealign)
-	endif()
+    # Realign the stack, for compatibility with an older ABI.
+    if (CMAKE_COMPILER_IS_GNUCXX)
+	set_target_properties(smokeqtcore PROPERTIES COMPILE_FLAGS -mstackrealign)
+    endif()
 
     # Get rid of the "lib" prefix on archives/DLLs in Windows.
-    set_target_properties(smokeqtcore
-        PROPERTIES PREFIX "" IMPORT_PREFIX "")
+    set_target_properties(smokeqtcore PROPERTIES PREFIX "" IMPORT_PREFIX "")
 endif (WIN32)
 
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../qtcore_smoke.h DESTINATION include/smoke)

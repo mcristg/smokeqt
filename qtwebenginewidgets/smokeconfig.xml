@@ -18,7 +18,7 @@
         <typeName>QString</typeName>
     </voidpTypes>
     <exclude>
-        <signature>.*QWebEngineCallback.*</signature>
+        <!-- <signature>.*QWebEngineCallback.*</signature> -->
     </exclude>
     <classList>
         <class>QWebEngineCertificateError</class>

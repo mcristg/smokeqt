@@ -39,14 +39,22 @@
         <signature>.*std::chrono::duration.*</signature>
         <signature>^void QMessageLogContext::copy\(const QMessageLogContext&amp;\)$</signature>
         <signature>.*std::chrono::.*QDeadlineTimer::remainingTimeAsDuration\(\) const$</signature>
-		<signature>.*QDataStream::operator...*q(int|float).*</signature>
+	<signature>.*QDataStream::operator...*q(int|float).*</signature>
+			
+	<signature>.*QByteArray::FromBase64Result::decodingStatus.*</signature>
 
         <!-- Smoke does not have complete rvalue reference support -->
         <signature>^(::)?QSignalBlocker\*.*QSignalBlocker::QSignalBlocker\(QSignalBlocker.*\).*</signature>
         <signature>^(::)?QSignalBlocker.*&amp;.*(QSignalBlocker::)?operator=\(QSignalBlocker.*&amp;.*\).*</signature>
+
+	<signature>^(::)?QDataStream.*&amp;.*operator(&lt;&lt;|&gt;&gt;).*\(.*QDataStream.*&amp;.*\)</signature>
 		
-		<signature>^(::)?QDataStream.*&amp;.*operator(&lt;&lt;|&gt;&gt;).*\(.*QDataStream.*&amp;.*\)</signature>
-		<!-- <signature></signature> -->
+	<!-- call to deleted member function 'operator=' -->
+	<signature>.*operator=\(QSemaphoreReleaser&amp;.*.*</signature>
+			
+	<!-- call to implicitly-deleted copy constructor of 'classname' -->
+	<signature>.*QResource\(const QResource&amp;\)$</signature>
+	<signature>.*QSemaphoreReleaser\(QSemaphoreReleaser&amp;\)$</signature>
 
         <!-- Ignore Mac types -->
         <signature>^CGPoint QPointF?::toCGPoint\(\) const$</signature>
@@ -81,19 +89,33 @@
         <class>QAtomicInt</class>
         <class>QAtomicInteger</class>
         <class>QAtomicPointer</class>
+	<class>QBEInteger</class>
         <class>QBasicTimer</class>
         <class>QBitArray</class>
         <class>QBuffer</class>
         <class>QByteArray</class>
+	<class>QByteArray::FromBase64Result</class>
         <class>QByteArrayList</class>
         <class>QByteArrayMatcher</class>
         <class>QCache</class>
+	<class>QCalendar</class>
+	<class>QCborArray</class>
+	<class>QCborError</class>
+	<class>QCborMap</class>
+	<class>QCborMap::ConstIterator</class>
+	<class>QCborMap::Iterator</class>
+	<class>QCborParserError</class>
+	<class>QCborStreamReader</class>
+	<class>QCborStreamReader::StringResult</class>
+	<class>QCborStreamWriter</class>
+	<!--<class>QCborValue</class>-->
         <class>QChar</class>
         <class>QChildEvent</class>
         <class>QCollator</class>
         <class>QCollatorSortKey</class>
         <class>QCommandLineOption</class>
         <class>QCommandLineParser</class>
+	<class>QConcatenateTablesProxyModel</class>
         <class>QContiguousCache</class>
         <class>QCoreApplication</class>
         <class>QCryptographicHash</class>
@@ -130,6 +152,7 @@
         <class>QGenericArgument</class>
         <class>QGenericReturnArgument</class>
         <class>QGlobalStatic</class>
+	<class>QGregorianCalendar</class>
         <class>QHash</class>
         <class>QHashIterator</class>
         <class>QHistoryState</class>
@@ -138,19 +161,21 @@
         <class>QItemSelection</class>
         <class>QItemSelectionModel</class>
         <class>QItemSelectionRange</class>
+	<class>QJalaliCalendar</class>
         <class>QJsonArray</class>
         <class>QJsonDocument</class>
         <class>QJsonObject</class>
         <class>QJsonParseError</class>
         <class>QJsonValue</class>
+	<class>QJulianCalendar</class>
+	<class>QKeyValueIterator</class>
+	<class>QLEInteger</class>
         <class>QLatin1Char</class>
         <class>QLatin1String</class>
         <class>QLibrary</class>
         <class>QLibraryInfo</class>
         <class>QLine</class>
         <class>QLineF</class>
-        <class>QLinkedList</class>
-        <class>QLinkedListIterator</class>
         <class>QList</class>
         <class>QListIterator</class>
         <class>QLocale</class>
@@ -171,6 +196,7 @@
         <class>QMetaObject::Connection</class>
         <class>QMetaProperty</class>
         <class>QMetaType</class>
+	<class>QMilankovicCalendar</class>
         <class>QMimeData</class>
         <class>QMimeDatabase</class>
         <class>QMimeType</class>
@@ -178,7 +204,6 @@
         <class>QMultiHash</class>
         <class>QMultiMap</class>
         <class>QMutableHashIterator</class>
-        <class>QMutableLinkedListIterator</class>
         <class>QMutableListIterator</class>
         <class>QMutableMapIterator</class>
         <class>QMutableSetIterator</class>
@@ -197,9 +222,12 @@
         <class>QPointF</class>
         <class>QPointer</class>
         <class>QProcess</class>
+	<class>QProcess::CreateProcessArguments</class>
         <class>QProcessEnvironment</class>
         <class>QPropertyAnimation</class>
         <class>QQueue</class>
+	<!--<class>QRandomGenerator</class>-->
+	<class>QRandomGenerator64</class>
         <class>QReadLocker</class>
         <class>QReadWriteLock</class>
         <class>QRect</class>
@@ -209,12 +237,15 @@
         <class>QRegularExpressionMatch</class>
         <class>QRegularExpressionMatchIterator</class>
         <class>QResource</class>
+	<class>QRomanCalendar</class>
         <class>QRunnable</class>
         <class>QSaveFile</class>
+	<class>QScopeGuard</class>
         <class>QScopedArrayPointer</class>
         <class>QScopedPointer</class>
         <class>QScopedValueRollback</class>
         <class>QSemaphore</class>
+	<class>QSemaphoreReleaser</class>
         <class>QSequentialAnimationGroup</class>
         <class>QSequentialIterable</class>
         <class>QSet</class>
@@ -247,6 +278,7 @@
         <class>QStringListModel</class>
         <class>QStringMatcher</class>
         <class>QStringRef</class>
+	<class>QStringView</class>
         <class>QSysInfo</class>
         <class>QSystemSemaphore</class>
         <class>QTemporaryDir</class>
@@ -288,10 +320,9 @@
         <class>QXmlStreamNotationDeclaration</class>
         <class>QXmlStreamReader</class>
         <class>QXmlStreamWriter</class>
-		
-		<class>QCborSimpleType</class>
-
-		<class>QMetaObjectBuilder</class>
+	<class>qfloat16</class>
+	<class>QCborSimpleType</class>
+	<class>QMetaObjectBuilder</class>
 
         <!-- namespaces -->
         <class>Qt</class>

@@ -1,5 +1,9 @@
-cmake_minimum_required(VERSION 3.20.3)
+cmake_minimum_required(VERSION 3.18.4)
 project(SMOKEQT5)
+
+set(VERSION_MAJOR 5)
+set(VERSION_MINOR 15)
+set(VERSION_PATCH 2)
 
 function(get_smokegen_args RESULT_NAME moduleName)
     set(clangOptions "-clangOptions")
@@ -14,10 +18,11 @@ function(get_smokegen_args RESULT_NAME moduleName)
         # running inside smokegen, Qt's compiler detection sees the compiler as
         # clang under msvc.
         list(APPEND clangOptions "-std=c++14")
-    elseif(${Qt5Core_VERSION} VERSION_GREATER 5.6.99)
+    elseif(${Qt5Core_VERSION} VERSION_GREATER 5.15.2)
         # Qt >=5.7.0 requires c++11
-        list(APPEND clangOptions "-std=c++17")
+        list(APPEND clangOptions "-std=c++14")
     endif()
+
 
     set(smokegenArgs
         -config "${CMAKE_CURRENT_BINARY_DIR}/config.xml"
@@ -49,12 +54,14 @@ function(create_configure_files dirs)
     endif()
 endfunction()
 
+
 add_definitions(-DSMOKE_BUILDING)
 
 if(MSVC)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP")
 endif()
 
+find_package(Vulkan REQUIRED)
 find_package(Qt5 COMPONENTS Core REQUIRED)
 find_package(Qt5
     COMPONENTS
@@ -70,20 +77,31 @@ find_package(Qt5
     Qml
     Quick
     QuickWidgets
-    #Script
     Sql
     Svg
     Test
     UiTools
+    VulkanSupport
     WebChannel
     WebEngineCore
     WebEngineWidgets
     Widgets
+    3DAnimation
+    3DCore
+    3DExtras
+    3DInput
+    3DLogic
+    3DRender
     Xml
     XmlPatterns
     QUIET
 )
+
 find_package(Smoke)
+
+if (Qt5_DIR)
+   string(REPLACE "/lib/cmake/Qt5" "" Qt_ROOT_DIR ${Qt5_DIR})
+endif()   
 
 if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
 set(CMAKE_INSTALL_PREFIX ${SMOKE_INSTALL_PREFIX}
@@ -91,6 +109,7 @@ set(CMAKE_INSTALL_PREFIX ${SMOKE_INSTALL_PREFIX}
 endif(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${SMOKE_CMAKE_MODULE_DIR}")
+
 include(MacroOptionalFindPackage)
 include(MacroOptionalAddBindings)
 include(MacroLogFeature)
@@ -150,9 +169,7 @@ macro_optional_add_bindings(Qt5QuickWidgets_FOUND "QtQuickWidgets" qtquickwidget
 #
 macro_optional_add_bindings(Qt5Sql_FOUND "QtSql" qtsql)
 macro_optional_add_bindings(Qt5Svg_FOUND "QtSvg" qtsvg)
-#
-#macro_optional_add_bindings(Qt5Test_FOUND "QtTest" qttest)
-#
+
 macro_optional_add_bindings(Qt5UiTools_FOUND "QtUiTools" qtuitools)
 macro_optional_add_bindings(Qt5WebChannel_FOUND "QtWebChannel" qtwebchannel)
 macro_optional_add_bindings(Qt5WebEngineCore_FOUND "QtWebEngineCore" qtwebenginecore)
@@ -160,6 +177,14 @@ macro_optional_add_bindings(Qt5WebEngineWidgets_FOUND "QtWebEngineWidgets" qtweb
 macro_optional_add_bindings(Qt5Widgets_FOUND "QtWidgets" qtwidgets)
 macro_optional_add_bindings(Qt5Xml_FOUND "QtXml" qtxml)
 macro_optional_add_bindings(Qt5XmlPatterns_FOUND "QtXmlPatterns" qtxmlpatterns)
+#
+macro_optional_add_bindings(Qt53DCore_FOUND "Qt3DCore" qt3dcore)
+macro_optional_add_bindings(Qt53DExtras_FOUND "Qt3DExtras" qt3dextras)
+macro_optional_add_bindings(Qt53DInput_FOUND "Qt3DInput" qt3dinput)
+macro_optional_add_bindings(Qt53DLogic_FOUND "Qt3DLogic" qt3dlogic)
+macro_optional_add_bindings(Qt53DRender_FOUND "Qt3DRender" qt3drender)
+macro_optional_add_bindings(Qt53DAnimation_FOUND "Qt3DAnimation" qt3danimation)
+#
 #
 #macro_optional_add_bindings(PHONON_FOUND "Phonon" phonon)
 #

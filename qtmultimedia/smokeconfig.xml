@@ -30,7 +30,7 @@
         <signature>^bool qt_sendSpontaneousEvent\(.*\)$</signature>
         <signature>^void qt_format_text\(.*\)$</signature>
 		
-		<signature>^(::)?QDataStream.*&amp;.*operator(&lt;&lt;|&gt;&gt;)\(.*QDataStream.*&amp;.*\)</signature>
+	<signature>^(::)?QDataStream.*&amp;.*operator(&lt;&lt;|&gt;&gt;)\(.*QDataStream.*&amp;.*\)</signature>
 
         <!-- Ignore Mac types -->
         <signature>.*operator&lt;&lt;\(.*const objc_object\*\)$</signature>
@@ -43,7 +43,7 @@
         <name>.*operator.*</name>
     </functions>
     <classList>
-        <class>QAbstractAudioDeviceInfo</class>
+        <!-- <class>QAbstractAudioDeviceInfo</class> -->
         <class>QAbstractAudioInput</class>
         <class>QAbstractAudioOutput</class>
         <class>QAbstractPlanarVideoBuffer</class>
@@ -53,15 +53,15 @@
         <class>QAudioBuffer</class>
         <class>QAudioBuffer::StereoFrame</class>
         <class>QAudioDecoder</class>
-        <class>QAudioDecoderControl</class>
+        <!-- <class>QAudioDecoderControl</class> -->
         <class>QAudioDeviceInfo</class>
         <class>QAudioEncoderSettings</class>
         <class>QAudioEncoderSettingsControl</class>
         <class>QAudioFormat</class>
         <class>QAudioInput</class>
-        <class>QAudioInputSelectorControl</class>
+        <!-- <class>QAudioInputSelectorControl</class> -->
         <class>QAudioOutput</class>
-        <class>QAudioOutputSelectorControl</class>
+        <!-- <class>QAudioOutputSelectorControl</class> -->
         <class>QAudioProbe</class>
         <class>QAudioRecorder</class>
         <class>QAudioRoleControl</class>
@@ -79,7 +79,7 @@
         <class>QCameraFocusControl</class>
         <class>QCameraFocusZone</class>
         <class>QCameraImageCapture</class>
-        <class>QCameraImageCaptureControl</class>
+        <!-- <class>QCameraImageCaptureControl</class> -->
         <class>QCameraImageProcessing</class>
         <class>QCameraImageProcessingControl</class>
         <class>QCameraInfo</class>
@@ -101,17 +101,17 @@
         <class>QMediaNetworkAccessControl</class>
         <class>QMediaObject</class>
         <class>QMediaPlayer</class>
-        <class>QMediaPlayerControl</class>
+        <!-- <class>QMediaPlayerControl</class> -->
         <class>QMediaPlaylist</class>
         <class>QMediaRecorder</class>
-        <class>QMediaRecorderControl</class>
+        <!-- <class>QMediaRecorderControl</class> -->
         <class>QMediaResource</class>
         <class>QMediaService</class>
         <class>QMediaServiceCameraInfoInterface</class>
-        <class>QMediaServiceDefaultDeviceInterface</class>
+        <!-- <class>QMediaServiceDefaultDeviceInterface</class> -->
         <class>QMediaServiceFeaturesInterface</class>
         <class>QMediaServiceProviderPlugin</class>
-        <class>QMediaServiceSupportedDevicesInterface</class>
+        <!-- <class>QMediaServiceSupportedDevicesInterface</class> -->
         <class>QMediaServiceSupportedFormatsInterface</class>
         <class>QMediaStreamsControl</class>
         <class>QMediaTimeInterval</class>
@@ -125,7 +125,7 @@
         <class>QRadioTunerControl</class>
         <class>QSound</class>
         <class>QSoundEffect</class>
-        <class>QVideoDeviceSelectorControl</class>
+        <!-- <class>QVideoDeviceSelectorControl</class> -->
         <class>QVideoEncoderSettings</class>
         <class>QVideoEncoderSettingsControl</class>
         <class>QVideoFilterRunnable</class>
@@ -133,7 +133,7 @@
         <class>QVideoProbe</class>
         <class>QVideoRendererControl</class>
         <class>QVideoSurfaceFormat</class>
-        <class>QVideoWindowControl</class>
+        <!-- <class>QVideoWindowControl</class> -->
 
         <!-- namespaces -->
         <class>QAudio</class>

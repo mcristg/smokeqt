@@ -27,8 +27,7 @@
         <signature>.*\(.*Private.*\).*</signature>
 
         <signature>^bool qt_sendSpontaneousEvent\(.*\)$</signature>
-		
-		<signature>^(::)?QDataStream.*&amp;.*operator(&lt;&lt;|&gt;&gt;)\(.*QDataStream.*&amp;.*\)</signature>
+	<signature>^(::)?QDataStream.*&amp;.*operator(&lt;&lt;|&gt;&gt;)\(.*QDataStream.*&amp;.*\)</signature>
 
         <!-- Ignore Mac types -->
         <signature>.*operator&lt;&lt;\(.*const objc_object\*\)$</signature>
@@ -70,7 +69,7 @@
         <class>QXmlLocator</class>
         <class>QXmlNamespaceSupport</class>
         <class>QXmlParseException</class>
-        <class>QXmlReader</class>
+        <!-- <class>QXmlReader</class> -->
         <class>QXmlSimpleReader</class>
         <class>QXmlStreamWriter</class>
     </classList>

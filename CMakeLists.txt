@@ -1,10 +1,6 @@
 cmake_minimum_required(VERSION 3.18.4)
 project(SMOKEQT5)
 
-set(VERSION_MAJOR 5)
-set(VERSION_MINOR 15)
-set(VERSION_PATCH 2)
-
 function(get_smokegen_args RESULT_NAME moduleName)
     set(clangOptions "-clangOptions")
     if(NOT WIN32)
@@ -96,6 +92,13 @@ find_package(Qt5
     XmlPatterns
     QUIET
 )
+
+string(REPLACE "." ";" VERSION_LIST ${Qt5Core_VERSION})
+list(GET VERSION_LIST 0 VERSION_MAJOR)
+list(GET VERSION_LIST 1 VERSION_MINOR)
+list(GET VERSION_LIST 2 VERSION_PATCH)
+
+
 
 find_package(Smoke)
 

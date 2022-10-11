@@ -18,7 +18,7 @@ target_link_libraries(smokeqtxml
     Qt5::Xml 
 )
 
-set_target_properties(smokeqtwidgets
+set_target_properties(smokeqtxml
     PROPERTIES
     VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}
     SOVERSION ${VERSION_MAJOR}

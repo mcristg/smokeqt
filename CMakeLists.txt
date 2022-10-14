@@ -4,7 +4,7 @@ project(SMOKEQT5)
 function(get_smokegen_args RESULT_NAME moduleName)
     set(clangOptions "-clangOptions")
     if(NOT WIN32)
-        list(APPEND clangOptions  "-fPIC")
+        list(APPEND clangOptions  "-std=c++14")
     endif()
 
     if(MSVC AND MSVC_VERSION GREATER 1600)

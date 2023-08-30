@@ -147,8 +147,10 @@ endif()
 #macro_optional_find_package(QImageBlitz)
 #macro_log_feature(QIMAGEBLITZ_FOUND "QImageBlitz" "QImageBlitz library" "http://www.kde.org" FALSE "" "Needed to compile QImageBlitz bindings")
 #
-macro_optional_find_package(Qwt)
-macro_log_feature(QWT_FOUND "Qwt6 for Qt5" "Qwt6 libraries for Qt5" "http://qwt.sourceforge.net" FALSE "" "Needed to compile Qwt6 bindings")
+if(QWT_ROOT_DIR)
+   macro_optional_find_package(Qwt)
+   macro_log_feature(QWT_FOUND "Qwt6 for Qt5" "Qwt6 libraries for Qt5" "http://qwt.sourceforge.net" FALSE "" "Needed to compile Qwt6 bindings")
+endif()
 #
 #macro_optional_find_package(Phonon)
 #macro_log_feature(PHONON_FOUND "Phonon" "Phonon multimedia framework" "http://www.kde.org" FALSE "" "Needed to compile Phonon bindings")
@@ -197,7 +199,9 @@ macro_optional_add_bindings(Qt53DAnimation_FOUND "Qt3DAnimation" qt3danimation)
 #
 #macro_optional_add_bindings(QSCINTILLA_FOUND "QScintilla" qsci)
 #
-macro_optional_add_bindings(QWT_FOUND "Qwt" qwt)
+if(QWT_ROOT_DIR)
+   macro_optional_add_bindings(QWT_FOUND "Qwt" qwt)
+endif()
 #
 #macro_optional_add_bindings(QIMAGEBLITZ_FOUND "QImageBlitz" qimageblitz)
 

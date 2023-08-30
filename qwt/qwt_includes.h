@@ -1,5 +1,4 @@
 #include <qwt.h>
-#include <qwt_global.h>
 
 #if QWT_VERSION >= 0x050000 && QWT_VERSION < 0x060000
 #include <qwt_abstract_scale.h>
@@ -89,7 +88,6 @@
 #include <qwt_column_symbol.h>
 #include <qwt_compass.h>
 #include <qwt_compass_rose.h>
-#include <qwt_compat.h>
 #include <qwt_counter.h>
 #include <qwt_curve_fitter.h>
 #include <qwt_date.h>

@@ -1,67 +1,50 @@
-include(FindQwt5)
+include(FindQwt)
 
-include_directories( ${QT_INCLUDES} ${QT_QTOPENGL_INCLUDES} ${Qwt5_INCLUDE_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
+create_configure_files("${Qt5Core_INCLUDE_DIRS};${Qt5Gui_INCLUDE_DIRS};${Qt5Widgets_INCLUDE_DIRS};${Qt5OpenGL_INCLUDE_DIRS};${QWT_INCLUDE_DIRS};${CMAKE_CURRENT_SOURCE_DIR}")
+get_smokegen_args(smokegenArgs qwt)
+run_smokegen(10 "${smokegenArgs}")
+get_smokegen_output_files(smokeqwt_LIB_SRCS 10)
 
-configure_file(config.xml.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.xml @ONLY)
-
-########### next target ###############
-
-add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/smokedata.cpp
-	${CMAKE_CURRENT_BINARY_DIR}/x_1.cpp
-	${CMAKE_CURRENT_BINARY_DIR}/x_2.cpp
-	${CMAKE_CURRENT_BINARY_DIR}/x_3.cpp
-	${CMAKE_CURRENT_BINARY_DIR}/x_4.cpp
-	${CMAKE_CURRENT_BINARY_DIR}/x_5.cpp
-	${CMAKE_CURRENT_BINARY_DIR}/x_6.cpp
-	${CMAKE_CURRENT_BINARY_DIR}/x_7.cpp
-	${CMAKE_CURRENT_BINARY_DIR}/x_8.cpp
-	${CMAKE_CURRENT_BINARY_DIR}/x_9.cpp
-	${CMAKE_CURRENT_BINARY_DIR}/x_10.cpp
-
-    COMMAND ${SMOKE_GEN_BIN}
-    ARGS -config "${CMAKE_CURRENT_BINARY_DIR}/config.xml" -smokeconfig "${CMAKE_CURRENT_SOURCE_DIR}/smokeconfig.xml"
-         -I "${Qwt5_INCLUDE_DIR}" -L "${CMAKE_BINARY_DIR}" -- ${CMAKE_CURRENT_SOURCE_DIR}/qwt_includes.h
-    DEPENDS ${SMOKE_GEN_BIN} "${CMAKE_CURRENT_SOURCE_DIR}/smokeconfig.xml"
-    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
-
-set_property(SOURCE ${CMAKE_CURRENT_BINARY_DIR}/smokedata.cpp APPEND PROPERTY OBJECT_DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/x_1.cpp)
-
-set(smokeqwt_LIB_SRCS ${CMAKE_CURRENT_BINARY_DIR}/smokedata.cpp
-	${CMAKE_CURRENT_BINARY_DIR}/x_1.cpp 
-	${CMAKE_CURRENT_BINARY_DIR}/x_2.cpp
-	${CMAKE_CURRENT_BINARY_DIR}/x_3.cpp
-	${CMAKE_CURRENT_BINARY_DIR}/x_4.cpp
-	${CMAKE_CURRENT_BINARY_DIR}/x_5.cpp
-	${CMAKE_CURRENT_BINARY_DIR}/x_6.cpp
-	${CMAKE_CURRENT_BINARY_DIR}/x_7.cpp
-	${CMAKE_CURRENT_BINARY_DIR}/x_8.cpp
-	${CMAKE_CURRENT_BINARY_DIR}/x_9.cpp
-	${CMAKE_CURRENT_BINARY_DIR}/x_10.cpp)
+set(CMAKE_CXX_FLAGS "-I${QWT_ROOT_DIR}/include -I${CMAKE_CURRENT_SOURCE_DIR}")
 
 IF(CMAKE_CXX_FLAGS MATCHES "-fvisibility")
     ADD_DEFINITIONS(-DGCC_VISIBILITY)
 ENDIF(CMAKE_CXX_FLAGS MATCHES "-fvisibility")
+
 add_library(smokeqwt SHARED ${smokeqwt_LIB_SRCS})
 
-target_link_libraries(smokeqwt smokeqtcore smokeqtgui ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${Qwt5_Qt4_LIBRARY})
+target_link_libraries(smokeqwt 
+    smokeqtcore 
+    smokeqtgui 
+    smokeqtwidgets 
+    Qt5::Core
+    Qt5::Gui
+    Qt5::Widgets
+    Qt5::OpenGL
+)
 
-set_target_properties(smokeqwt PROPERTIES VERSION 3.0.0 SOVERSION 3 )
+set_target_properties(smokeqwt
+    PROPERTIES
+    VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}
+    SOVERSION ${VERSION_MAJOR}
+    CXX_STANDARD 14
+)
 
 install(TARGETS smokeqwt LIBRARY DESTINATION ${LIB_INSTALL_DIR}
     ARCHIVE DESTINATION ${LIB_INSTALL_DIR}
     RUNTIME DESTINATION bin)
 
 if (WIN32)
-	# Realign the stack, for compatibility with an older ABI.
-	if(CMAKE_COMPILER_IS_GNUCXX)
-		set_target_properties(smokeqwt PROPERTIES COMPILE_FLAGS -mstackrealign)
-	endif()
+    # Realign the stack, for compatibility with an older ABI.
+    if (CMAKE_COMPILER_IS_GNUCXX)
+	set_target_properties(smokeqwt PROPERTIES COMPILE_FLAGS -mstackrealign)
+    endif()
 
     # Get rid of the "lib" prefix on archives/DLLs in Windows.
-    set_target_properties(smokeqwt
-        PROPERTIES PREFIX "" IMPORT_PREFIX "")
+    set_target_properties(smokeqwt PROPERTIES PREFIX "" IMPORT_PREFIX "")
 endif (WIN32)
 
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../qwt_smoke.h DESTINATION include/smoke)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/qwt.argnames.txt DESTINATION share/smoke)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/qwt.typedefs.txt DESTINATION share/smoke)
+

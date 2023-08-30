@@ -4,7 +4,11 @@ project(SMOKEQT5)
 function(get_smokegen_args RESULT_NAME moduleName)
     set(clangOptions "-clangOptions")
     if(NOT WIN32)
-        list(APPEND clangOptions  "-std=c++14")
+        list(APPEND clangOptions "-fPIC")
+      if (SMOKEGEN_OPTION) 
+         string(REPLACE " " ";" SMOKEGEN_OPTION ${SMOKEGEN_OPTION})
+         list(APPEND clangOptions ${SMOKEGEN_OPTION})
+      endif()        
     endif()
 
     if(MSVC AND MSVC_VERSION GREATER 1600)
@@ -193,7 +197,7 @@ macro_optional_add_bindings(Qt53DAnimation_FOUND "Qt3DAnimation" qt3danimation)
 #
 #macro_optional_add_bindings(QSCINTILLA_FOUND "QScintilla" qsci)
 #
-#macro_optional_add_bindings(Qwt5_Qt4_FOUND "Qwt" qwt)
+#macro_optional_add_bindings(QWT_FOUND "Qwt" qwt)
 #
 #macro_optional_add_bindings(QIMAGEBLITZ_FOUND "QImageBlitz" qimageblitz)
 

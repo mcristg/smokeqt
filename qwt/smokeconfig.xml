@@ -25,93 +25,180 @@
         <signature>.*qt_mac_set_cursor.*</signature>
     </exclude>
     <classList>
-        <class>QwtAbstractScaleDraw</class>
+        <class>QwtAbstractLegend</class>
         <class>QwtAbstractScale</class>
+        <class>QwtAbstractScaleDraw</class>
+        <class>QwtAbstractSeriesStore</class>
         <class>QwtAbstractSlider</class>
+        <class>QwtAlphaColorMap</class>
         <class>QwtAnalogClock</class>
         <class>QwtArrowButton</class>
-        <class>QwtClipper</class>
+        <class>QwtBezier</class>
         <class>QwtColorMap</class>
-        <class>QwtLinearColorMap</class>
-        <class>QwtAlphaColorMap</class>
+        <class>QwtColumnRect</class>
+        <class>QwtColumnSymbol</class>
         <class>QwtCompass</class>
+        <class>QwtCompassMagnetNeedle</class>
         <class>QwtCompassRose</class>
-        <class>QwtSimpleCompassRose</class>
+        <class>QwtCompassScaleDraw</class>
+        <class>QwtCompassWindArrow</class>
         <class>QwtCounter</class>
-        <class>QwtCurveFitter</class>
-        <class>QwtSplineCurveFitter</class>
-        <class>QwtData</class>
-        <class>QwtPolygonFData</class>
-        <class>QwtArrayData</class>
         <class>QwtCPointerData</class>
-        <class>QwtDialScaleDraw</class>
+        <class>QwtCPointerValueData</class>
+        <class>QwtCurveFitter</class>
+        <class>QwtDate</class>
+        <class>QwtDateScaleDraw</class>
+        <class>QwtDateScaleEngine</class>
         <class>QwtDial</class>
         <class>QwtDialNeedle</class>
         <class>QwtDialSimpleNeedle</class>
-        <class>QwtCompassMagnetNeedle</class>
-        <class>QwtCompassWindArrow</class>
-        <class>QwtDoubleInterval</class>
-        <class>QwtDoubleRange</class>
-        <class>QwtDoublePoint</class>
-        <class>QwtDoubleSize</class>
-        <class>QwtDoubleRect</class>
         <class>QwtDynGridLayout</class>
         <class>QwtEventPattern</class>
-        <class>QwtIntervalData</class>
+        <class>QwtGraphic</class>
+        <class>QwtHueColorMap</class>
+        <class>QwtInterval</class>
+        <class>QwtIntervalSample</class>
+        <class>QwtIntervalSeriesData</class>
+        <class>QwtIntervalSymbol</class>
         <class>QwtKnob</class>
-        <class>QwtMetricsMap</class>
         <class>QwtLegend</class>
-        <class>QwtLegendItem</class>
-        <class>QwtLegendItemManager</class>
+        <class>QwtLegendData</class>
+        <class>QwtLegendLabel</class>
+        <class>QwtLinearColorMap</class>
+        <class>QwtLinearScaleEngine</class>
+        <class>QwtLogScaleEngine</class>
+        <class>QwtLogTransform</class>
         <class>QwtMagnifier</class>
-        <class>QwtPaintBuffer</class>
+        <!--<class>QwtMatrixRasterData</class>--> <!-- const’ overriding final function -->
+        <class>QwtNullPaintDevice</class>
+        <class>QwtNullTransform</class>
+        <class>QwtOHLCSample</class>
         <class>QwtPainter</class>
+        <class>QwtPainterCommand</class>
         <class>QwtPanner</class>
         <class>QwtPicker</class>
-        <class>QwtPickerMachine</class>
         <class>QwtPickerClickPointMachine</class>
-        <class>QwtPickerDragPointMachine</class>
         <class>QwtPickerClickRectMachine</class>
+        <class>QwtPickerDragLineMachine</class>
+        <class>QwtPickerDragPointMachine</class>
         <class>QwtPickerDragRectMachine</class>
+        <class>QwtPickerMachine</class>
         <class>QwtPickerPolygonMachine</class>
+        <class>QwtPickerTrackerMachine</class>
+        <class>QwtPixelMatrix</class>
+        <class>QwtPlainTextEngine</class>
+        <class>QwtPlot</class>
+        <class>QwtPlotAbstractBarChart</class>
+        <class>QwtPlotAbstractCanvas</class>
+        <class>QwtPlotAbstractGLCanvas</class>
+        <class>QwtPlotBarChart</class>
         <class>QwtPlotCanvas</class>
         <class>QwtPlotCurve</class>
         <class>QwtPlotDict</class>
+        <class>QwtPlotDirectPainter</class>
+        <class>QwtPlotGLCanvas</class>
+        <class>QwtPlotGraphicItem</class>
         <class>QwtPlotGrid</class>
-        <class>QwtPlot</class>
+        <class>QwtPlotHistogram</class>
+        <class>QwtPlotIntervalCurve</class>
         <class>QwtPlotItem</class>
         <class>QwtPlotLayout</class>
         <class>QwtPlotMagnifier</class>
         <class>QwtPlotMarker</class>
+        <class>QwtPlotMultiBarChart</class>
+        <class>QwtPlotOpenGLCanvas</class>
         <class>QwtPlotPanner</class>
         <class>QwtPlotPicker</class>
-        <class>QwtPlotPrintFilter</class>
         <class>QwtPlotRasterItem</class>
+        <class>QwtPlotRenderer</class>
+        <class>QwtPlotRescaler</class>
         <class>QwtPlotScaleItem</class>
+        <class>QwtPlotSeriesItem</class>
+        <class>QwtPlotShapeItem</class>
+        <class>QwtPlotSpectroCurve</class>
         <class>QwtPlotSpectrogram</class>
+        <class>QwtPlotSvgItem</class>
+        <class>QwtPlotTextLabel</class>
+        <class>QwtPlotTradingCurve</class>
+        <class>QwtPlotVectorField</class>
+        <class>QwtPlotZoneItem</class>
         <class>QwtPlotZoomer</class>
+        <class>QwtPoint3D</class>
+        <class>QwtPoint3DSeriesData</class>
+        <class>QwtPointArrayData</class>
+        <class>QwtPointMapper</class>
+        <class>QwtPointPolar</class>
+        <class>QwtPointSeriesData</class>
+        <class>QwtPolarCanvas</class>
+        <class>QwtPolarCurve</class>
+        <class>QwtPolarFitter</class>
+        <class>QwtPolarGrid</class>
+        <class>QwtPolarItem</class>
+        <class>QwtPolarItemDict</class>
+        <class>QwtPolarLayout</class>
+        <class>QwtPolarMagnifier</class>
+        <class>QwtPolarMarker</class>
+        <class>QwtPolarPanner</class>
+        <class>QwtPolarPicker</class>
+        <class>QwtPolarPlot</class>
+        <class>QwtPolarRenderer</class>
+        <class>QwtPolarSpectrogram</class>
+        <class>QwtPowerTransform</class>
         <class>QwtRasterData</class>
-        <class>QwtRect</class>
+        <class>QwtRichTextEngine</class>
         <class>QwtRoundScaleDraw</class>
+        <class>QwtSamplingThread</class>
+        <class>QwtSaturationValueColorMap</class>
+        <class>QwtScaleArithmetic</class>
         <class>QwtScaleDiv</class>
         <class>QwtScaleDraw</class>
-        <class>QwtScaleArithmetic</class>
         <class>QwtScaleEngine</class>
-        <class>QwtLinearScaleEngine</class>
-        <class>QwtLog10ScaleEngine</class>
-        <class>QwtScaleTransformation</class>
         <class>QwtScaleMap</class>
         <class>QwtScaleWidget</class>
+        <class>QwtSeriesData</class>
+        <class>QwtSeriesStore</class> 
+        <!--<class>QwtSetSample</class> --> <!-- error in smokegen dump core -->
+        <class>QwtSetSeriesData</class>
+        <class>QwtSimpleCompassRose</class>
         <class>QwtSlider</class>
         <class>QwtSpline</class>
+        <class>QwtSplineBasis</class>
+        <!--<class>QwtSplineC1</class>-->
+        <!-- <class>QwtSplineC2</class> -->
+        <class>QwtSplineCubic</class>
+        <class>QwtSplineCurveFitter</class>
+        <!--<class>QwtSplineG1</class>-->
+        <class>QwtSplineInterpolating</class>
+        <class>QwtSplineLocal</class>
+        <class>QwtSplineParametrization</class>
+        <class>QwtSplinePleasing</class>
+        <class>QwtSplinePolynomial</class>
         <class>QwtSymbol</class>
-        <class>QwtTextEngine</class>
-        <class>QwtPlainTextEngine</class>
-        <class>QwtRichTextEngine</class>
+        <class>QwtSyntheticPointData</class>
+        <class>QwtSystemClock</class>
         <class>QwtText</class>
+        <class>QwtTextEngine</class>
         <class>QwtTextLabel</class>
         <class>QwtThermo</class>
+        <class>QwtTradingChartData</class>
+        <class>QwtTransform</class>
+        <class>QwtValuePointData</class>
+        <class>QwtVectorFieldArrow</class>
+        <class>QwtVectorFieldData</class>
+        <class>QwtVectorFieldSample</class>
+        <class>QwtVectorFieldSymbol</class>
+        <class>QwtVectorFieldThinArrow</class>
+        <class>QwtWeedingCurveFitter</class>
         <class>QwtWheel</class>
+        <class>QwtWidgetOverlay</class>
+        <!--- Namespace -->
+        <class>QwtAxis</class>
+        <class>QwtClipper</class>
+        <class>QwtPolar</class>
+        <class>QwtScaleRendererInt</class>
+        <class>QwtScaleRendererReal</class>
+        <!-- <class>QwtSplineC1P</class> --> <!-- invalid application of ‘sizeof’ to incomplete type ‘QwtSplinePolynomial’ -->
+        <class>QwtTriangle</class>
         <class>Qwt</class>
     </classList>
 </config>

@@ -36,18 +36,18 @@
         <signature>^bool qt_closestItemFirst\(const QGraphicsItem\*, const QGraphicsItem\*\)$</signature>
         <signature>^void qt_mac_emit_menuSignals\(QMenu\*, bool\)$</signature>
         <signature>^void qt_mac_menu_emit_hovered\(QMenu\*, QAction\*\)$</signature>
-	
-	<signature>^(::)?QDataStream.*&amp;.*operator(&lt;&lt;|&gt;&gt;)\(.*QDataStream.*&amp;.*\)</signature>
-	<signature>.*::sendCommand\(const QString&amp;.*</signature>
-
-	<signature>.*operator!=\(.*</signature>
-	<signature>.*operator==\(.*</signature>
-	
-	<!-- allocating an object of abstract class type 'classname' -->	
-	<signature>.*QAbstractTextureImage\(Qt3DCore::QNode\*\)$</signature>
-	<signature>.*QBufferDataGenerator\(\).*</signature>
-	<signature>.*QTextureGenerator\(\).*</signature>
-	<signature>.*QTextureImageDataGenerator\(\).*</signature>
+        
+        <signature>^(::)?QDataStream.*&amp;.*operator(&lt;&lt;|&gt;&gt;)\(.*QDataStream.*&amp;.*\)</signature>
+        <signature>.*::sendCommand\(const QString&amp;.*</signature>
+        
+        <signature>.*operator!=\(.*</signature>
+        <signature>.*operator==\(.*</signature>
+        
+        <!-- allocating an object of abstract class type 'classname' -->
+        <signature>.*QAbstractTextureImage\(Qt3DCore::QNode\*\)$</signature>
+        <signature>.*QBufferDataGenerator\(\).*</signature>
+        <signature>.*QTextureGenerator\(\).*</signature>
+        <signature>.*QTextureImageDataGenerator\(\).*</signature>
 		
         <!-- Ignore Mac types -->
         <signature>.*operator&lt;&lt;\(.*const objc_object\*\)$</signature>
@@ -182,7 +182,7 @@
         <class>Qt3DRender::QWaitFence</class>
 		
         <!-- namespaces -->
-	<class>Qt3DRender</class>
+        <class>Qt3DRender</class>
 		
-     </classList>
+    </classList>
 </config>

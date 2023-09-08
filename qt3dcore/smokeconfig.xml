@@ -36,20 +36,20 @@
         <signature>^bool qt_closestItemFirst\(const QGraphicsItem\*, const QGraphicsItem\*\)$</signature>
         <signature>^void qt_mac_emit_menuSignals\(QMenu\*, bool\)$</signature>
         <signature>^void qt_mac_menu_emit_hovered\(QMenu\*, QAction\*\)$</signature>
-	
-	<signature>^(::)?QDataStream.*&amp;.*operator(&lt;&lt;|&gt;&gt;)\(.*QDataStream.*&amp;.*\)</signature>
-	<!--<signature>.*Qt3DCore::QBackendNode::sendCommand\(const QString&amp;.*</signature>-->
-	<signature>.*::sendCommand\(const QString&amp;.*</signature>
-	
-	<!--<signature>.*qt_getEnumName\(.*</signature>-->
-	<signature>.*operator\|\(.*</signature>
-	<signature>.*operator.*</signature>
+        
+        <signature>^(::)?QDataStream.*&amp;.*operator(&lt;&lt;|&gt;&gt;)\(.*QDataStream.*&amp;.*\)</signature>
+        <!--<signature>.*Qt3DCore::QBackendNode::sendCommand\(const QString&amp;.*</signature>-->
+        <signature>.*::sendCommand\(const QString&amp;.*</signature>
+        
+        <!--<signature>.*qt_getEnumName\(.*</signature>-->
+        <signature>.*operator\|\(.*</signature>
+        <signature>.*operator.*</signature>
 		
         <!-- Ignore Mac types -->
         <signature>.*operator&lt;&lt;\(.*const objc_object\*\)$</signature>
         <signature>.*qt_mac_is_metal.*</signature>
         <signature>.*qt_mac_clear_status_text.*</signature>
-   </exclude>
+    </exclude>
     <functions>
         <!-- include functions starting with 'q' -->
         <name>^q.*</name>
@@ -94,11 +94,10 @@
         <class>Qt3DCore::QStaticPropertyValueRemovedChangeBase</class>
         <class>Qt3DCore::QTransform</class>
         <class>Qt3DCore::Quick::QQmlAspectEngine</class>
-
 		
         <!-- namespaces -->
-	<class>Qt3DCore</class>
-	<class>Qt3DCore::Quick</class>
+        <class>Qt3DCore</class>
+        <class>Qt3DCore::Quick</class>
 		
-     </classList>
+    </classList>
 </config>

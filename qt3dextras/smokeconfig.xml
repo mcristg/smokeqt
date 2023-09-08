@@ -36,10 +36,10 @@
         <signature>^bool qt_closestItemFirst\(const QGraphicsItem\*, const QGraphicsItem\*\)$</signature>
         <signature>^void qt_mac_emit_menuSignals\(QMenu\*, bool\)$</signature>
         <signature>^void qt_mac_menu_emit_hovered\(QMenu\*, QAction\*\)$</signature>
-	
-	<signature>^(::)?QDataStream.*&amp;.*operator(&lt;&lt;|&gt;&gt;)\(.*QDataStream.*&amp;.*\)</signature>
-
-	<signature>.*::sendCommand\(const QString&amp;.*</signature>
+        
+        <signature>^(::)?QDataStream.*&amp;.*operator(&lt;&lt;|&gt;&gt;)\(.*QDataStream.*&amp;.*\)</signature>
+        
+        <signature>.*::sendCommand\(const QString&amp;.*</signature>
 
         <!-- Ignore Mac types -->
         <signature>.*operator&lt;&lt;\(.*const objc_object\*\)$</signature>
@@ -83,7 +83,7 @@
         <class>Qt3DExtras::QTorusMesh</class>
 		
         <!-- namespaces -->
-	<class>Qt3DExtras</class>
+        <class>Qt3DExtras</class>
 		
-     </classList>
+    </classList>
 </config>

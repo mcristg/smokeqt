@@ -38,8 +38,8 @@
         <signature>^QImage&amp;+ QImage::rgbSwapped\(\)$</signature>
 
         <signature>.*HDC.*\* qt_win_display_dc\(\)$</signature>
-
-	<signature>^(::)?QDataStream.*&amp;.*operator(&lt;&lt;|&gt;&gt;)\(.*QDataStream.*&amp;.*\)</signature>
+        
+        <signature>^(::)?QDataStream.*&amp;.*operator(&lt;&lt;|&gt;&gt;)\(.*QDataStream.*&amp;.*\)</signature>
 
         <!-- Ignore Mac types -->
         <signature>.*operator&lt;&lt;\(.*const objc_object\*\)$</signature>
@@ -80,8 +80,8 @@
         <class>QClipboard</class>
         <class>QCloseEvent</class>
         <class>QColor</class>
-	<class>QColorSpace</class>
-	<class>QColorTransform</class>
+        <class>QColorSpace</class>
+        <class>QColorTransform</class>
         <class>QConicalGradient</class>
         <class>QContextMenuEvent</class>
         <class>QCursor</class>
@@ -273,15 +273,15 @@
         <class>QVector2D</class>
         <class>QVector3D</class>
         <class>QVector4D</class>
-	<class>QVulkanDeviceFunctions</class>
-	<class>QVulkanFunctions</class>
-	<class>QVulkanInstance</class>
-	<class>QVulkanWindow</class>
-	<class>QVulkanWindowRenderer</class>
+        <class>QVulkanDeviceFunctions</class>
+        <class>QVulkanFunctions</class>
+        <class>QVulkanInstance</class>
+        <class>QVulkanWindow</class>
+        <class>QVulkanWindowRenderer</class>
         <class>QWhatsThisClickedEvent</class>
         <class>QWheelEvent</class>
         <class>QWindow</class>
         <class>QWindowStateChangeEvent</class>
-	<class>QCborSimpleType</class>		
+        <class>QCborSimpleType</class>	
     </classList>
 </config>

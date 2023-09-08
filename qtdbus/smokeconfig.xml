@@ -72,5 +72,5 @@
 
         <!-- namespaces -->
         <class>QDBus</class>
-     </classList>
+    </classList>
 </config>

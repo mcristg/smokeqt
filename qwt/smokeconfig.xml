@@ -163,11 +163,11 @@
         <class>QwtSlider</class>
         <class>QwtSpline</class>
         <class>QwtSplineBasis</class>
-        <!--<class>QwtSplineC1</class>-->
-        <!-- <class>QwtSplineC2</class> -->
+        <class>QwtSplineC1</class>
+        <class>QwtSplineC2</class>
         <class>QwtSplineCubic</class>
         <class>QwtSplineCurveFitter</class>
-        <!--<class>QwtSplineG1</class>-->
+        <class>QwtSplineG1</class>
         <class>QwtSplineInterpolating</class>
         <class>QwtSplineLocal</class>
         <class>QwtSplineParametrization</class>
@@ -197,7 +197,7 @@
         <class>QwtPolar</class>
         <class>QwtScaleRendererInt</class>
         <class>QwtScaleRendererReal</class>
-        <!-- <class>QwtSplineC1P</class> --> <!-- invalid application of ‘sizeof’ to incomplete type ‘QwtSplinePolynomial’ -->
+        <class>QwtSplineC1P</class>
         <class>QwtTriangle</class>
         <class>Qwt</class>
     </classList>

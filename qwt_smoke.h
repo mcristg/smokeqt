@@ -1,6 +1,9 @@
 #ifndef QWT_SMOKE_H
 #define QWT_SMOKE_H
 
+// Avoid error: invalid use of incomplete type ‘class name'
+#include <qwt_spline_polynomial.h>
+
 #include <smoke.h>
 
 // Defined in smokedata.cpp, initialized by init_qsci_Smoke(), used by all .cpp files

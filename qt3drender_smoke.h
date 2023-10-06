@@ -1,6 +1,6 @@
 #ifndef QT3DRENDER_SMOKE_H
 #define QT3DRENDER_SMOKE_H
-
+#include <qrenderapi.h>
 #include <smoke.h>
 
 // Defined in smokedata.cpp, initialized by init_qtsvg_Smoke(), used by all .cpp files

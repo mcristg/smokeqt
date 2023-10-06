@@ -4,6 +4,12 @@
         <module>qtcore</module>
         <module>qtgui</module>
     </parentModules>
+    <moduleNamespaces>
+        <namespace>Qt3DAnimation</namespace>
+    </moduleNamespaces>
+    <excludeIncFiles>
+        <excludeIncFile>qsharedpointer_impl.h</excludeIncFile>
+    </excludeIncFiles>
     <parts>1</parts>
     <scalarTypes>
         <!-- QString is a class, but represented as a scalar (#) in munged names -->
@@ -87,4 +93,7 @@
         <!-- namespaces -->
         <class>Qt3DAnimation</class>
      </classList>
+    <doubleConditions>
+        <doubleCondition>qt_getEnumName|qt_getEnumMetaObject</doubleCondition>
+    </doubleConditions>
 </config>

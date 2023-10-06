@@ -5,6 +5,12 @@
         <module>qtgui</module>
     </parentModules>
     <parts>1</parts>
+    <moduleNamespaces>
+        <namespace>Qt3DLogic</namespace>
+    </moduleNamespaces>
+    <excludeIncFiles>
+        <excludeIncFile>qsharedpointer_impl.h</excludeIncFile>
+    </excludeIncFiles>
     <scalarTypes>
         <!-- QString is a class, but represented as a scalar (#) in munged names -->
         <typeName>QString</typeName>

@@ -256,5 +256,10 @@
         <class>QWizard</class>
         <class>QWizardPage</class>
     </classList>
+    <doubleConditions>
+        <doubleCondition>OpenGl_VertexBuffer|OpenGl_VertexBuffer myFullScreenQuad</doubleCondition>
+        <doubleCondition>OpenGl_View|OpenGl_VertexBuffer myFullScreenQuadFlip</doubleCondition>
+        <doubleCondition>OpenGl_View|OpenGl_VertexBuffer myFullScreenQuad</doubleCondition>
+    </doubleConditions>
 </config>
 

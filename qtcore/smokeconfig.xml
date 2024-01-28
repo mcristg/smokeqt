@@ -327,4 +327,7 @@
         <!-- namespaces -->
         <class>Qt</class>
     </classList>
+    <tripleConditions>
+        <tripleCondition>QMetaType|QByteArray name() const|class QByteArray|BadCast</tripleCondition>
+    </tripleConditions>
 </config>

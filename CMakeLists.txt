@@ -101,56 +101,56 @@ if(Qt6_DIR)
   set(Qt6WidgetsTools_DIR "${Qt_ROOT_DIR}/lib/cmake/Qt6WidgetsTools")
   set(Qt6Widgets_DIR "${Qt_ROOT_DIR}/lib/cmake/Qt6Widgets")
   set(Qt6Xml_DIR "${Qt_ROOT_DIR}/lib/cmake/Qt6Xml")
-  set(Qt63DAnimation_DIR "${Qt_ROOT_DIR}/lib/cmake/Qt63DAnimation")
-  set(Qt63DCore_DIR "${Qt_ROOT_DIR}/lib/cmake/Qt63DCore")
-  set(Qt63DExtras_DIR "${Qt_ROOT_DIR}/lib/cmake/Qt63DExtras")
-  set(Qt63DInput_DIR "${Qt_ROOT_DIR}/lib/cmake/Qt63DInput")
-  set(Qt63DLogic_DIR "${Qt_ROOT_DIR}/lib/cmake/Qt63DLogic")
-  set(Qt63DRender_DIR "${Qt_ROOT_DIR}/lib/cmake/Qt63DRender")
   set(Qt6Concurrent_DIR "${Qt_ROOT_DIR}/lib/cmake/Qt6Concurrent")
   set(Qt6Pdf_DIR "${Qt_ROOT_DIR}/lib/cmake/Qt6Pdf")
+  #set(Qt63DAnimation_DIR "${Qt_ROOT_DIR}/lib/cmake/Qt63DAnimation")
+  #set(Qt63DCore_DIR "${Qt_ROOT_DIR}/lib/cmake/Qt63DCore")
+  #set(Qt63DExtras_DIR "${Qt_ROOT_DIR}/lib/cmake/Qt63DExtras")
+  #set(Qt63DInput_DIR "${Qt_ROOT_DIR}/lib/cmake/Qt63DInput")
+  #set(Qt63DLogic_DIR "${Qt_ROOT_DIR}/lib/cmake/Qt63DLogic")
+  #set(Qt63DRender_DIR "${Qt_ROOT_DIR}/lib/cmake/Qt63DRender")
 endif()   
 
-find_package(Vulkan REQUIRED)
+# find_package(Vulkan REQUIRED)
 find_package(Qt6 COMPONENTS Core REQUIRED)
 
 find_package(Qt6
   COMPONENTS
-  DBus
+  # DBus
   Gui
-  Help
-  Multimedia
-  MultimediaWidgets
+  # Help
+  # Multimedia
+  # MultimediaWidgets
   Network
   OpenGL
   Pdf
   PdfQuick
   PdfWidgets
-  Positioning
+  # Positioning
   PrintSupport
   Qml
   Quick
   QuickWidgets
-  Scxml
-  SpatialAudio
+  # Scxml
+  # SpatialAudio
   Sql
   Svg
   #Test
-  UiTools
+  # UiTools
   WebChannel
   WebEngineCore
   WebEngineQuick
   WebEngineWidgets
   Widgets
-  3DAnimation
-  3DCore
-  3DExtras
-  3DInput
-  3DLogic
-  3DRender
+#   3DAnimation
+#   3DCore
+#   3DExtras
+#   3DInput
+#   3DLogic
+#   3DRender
   Xml
-  QUIET
 )
+
 
 string(REPLACE "." ";" VERSION_LIST ${Qt6Core_VERSION})
 list(GET VERSION_LIST 0 VERSION_MAJOR)
@@ -227,12 +227,12 @@ macro_optional_add_bindings(Qt6WebEngineCore_FOUND "QtWebEngine" qtwebengine)
 macro_optional_add_bindings(Qt6Widgets_FOUND "QtWidgets" qtwidgets)
 macro_optional_add_bindings(Qt6Xml_FOUND "QtXml" qtxml)
 #
-macro_optional_add_bindings(Qt63DCore_FOUND "Qt3DCore" qt3dcore)
-macro_optional_add_bindings(Qt63DExtras_FOUND "Qt3DExtras" qt3dextras)
-macro_optional_add_bindings(Qt63DInput_FOUND "Qt3DInput" qt3dinput)
-macro_optional_add_bindings(Qt63DLogic_FOUND "Qt3DLogic" qt3dlogic)
-macro_optional_add_bindings(Qt63DRender_FOUND "Qt3DRender" qt3drender)
-macro_optional_add_bindings(Qt63DAnimation_FOUND "Qt3DAnimation" qt3danimation)
+# macro_optional_add_bindings(Qt63DCore_FOUND "Qt3DCore" qt3dcore)
+# macro_optional_add_bindings(Qt63DExtras_FOUND "Qt3DExtras" qt3dextras)
+# macro_optional_add_bindings(Qt63DInput_FOUND "Qt3DInput" qt3dinput)
+# macro_optional_add_bindings(Qt63DLogic_FOUND "Qt3DLogic" qt3dlogic)
+# macro_optional_add_bindings(Qt63DRender_FOUND "Qt3DRender" qt3drender)
+# macro_optional_add_bindings(Qt63DAnimation_FOUND "Qt3DAnimation" qt3danimation)
 #
 #macro_optional_add_bindings(QSCINTILLA_FOUND "QScintilla" qsci)
 #

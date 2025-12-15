@@ -15,7 +15,7 @@ add_library(smokeqt6core SHARED ${smokeqtcore_LIB_SRCS})
 
 target_link_libraries(smokeqt6core Qt6::Core smokebase ${SMOKE_BASE_LIBRARY})
 
-message("${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}.${QT_VERSION_PATCH}")
+message(STATUS "Qt Version: ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}")
 set_target_properties(smokeqt6core
     PROPERTIES
     VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}

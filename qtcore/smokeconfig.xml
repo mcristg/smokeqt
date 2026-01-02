@@ -15,6 +15,10 @@
     <signature>.*void quick_exit\(int\).*$</signature>
     <signature>.*void qsort(_[rb])?\(void\*, unsigned long, unsigned long.*</signature>
     <signature>.*(int|char\*) q(e|f|g)cvt(_r)?\(.*</signature>
+    
+    <!-- QPluginMetaDataV2 uses offsetof in constexpr which clang doesn't accept -->
+    <signature>.*QPluginMetaDataV2.*</signature>
+    
     <!-- we don't want private stuff in smoke.. -->
     <signature>.*::d_ptr.*</signature>
     <signature>.*::q_ptr.*</signature>

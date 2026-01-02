@@ -18,8 +18,8 @@ target_link_libraries(smokeqt6core Qt6::Core smokebase ${SMOKE_BASE_LIBRARY})
 message(STATUS "Qt Version: ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}")
 set_target_properties(smokeqt6core
     PROPERTIES
-    VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}
-    SOVERSION ${VERSION_MAJOR}
+    VERSION "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}"
+    SOVERSION "${VERSION_MAJOR}"
     CXX_STANDARD 17
 )
 

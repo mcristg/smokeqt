@@ -3,7 +3,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 create_configure_files("${Qt6Core_INCLUDE_DIRS};${Qt6Gui_INCLUDE_DIRS};${Qt6Svg_INCLUDE_DIRS}")
 get_smokegen_args(smokegenArgs qtsvg)
-run_smokegen(1 "${smokegenArgs}")
+run_smokegen(1 "${smokegenArgs}" smokeqt6core smokeqt6gui)
 get_smokegen_output_files(smokeqtsvg_LIB_SRCS 1)
 
 IF(CMAKE_CXX_FLAGS MATCHES "-fvisibility")

@@ -2,7 +2,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 create_configure_files("${Qt6Core_INCLUDE_DIRS};${Qt6Gui_INCLUDE_DIRS};${Qt6Quick_INCLUDE_DIRS};${Qt6Network_INCLUDE_DIRS};${Qt6WebEngineCore_INCLUDE_DIRS};${Qt6WebEngineWidgets_INCLUDE_DIRS}")
 get_smokegen_args(smokegenArgs qtwebengine)
-run_smokegen(1 "${smokegenArgs}")
+run_smokegen(1 "${smokegenArgs}" smokeqt6core smokeqt6gui smokeqt6network smokeqt6qml smokeqt6quick)
 get_smokegen_output_files(smokeqtwebengine_LIB_SRCS 1)
 
 IF(CMAKE_CXX_FLAGS MATCHES "-fvisibility")

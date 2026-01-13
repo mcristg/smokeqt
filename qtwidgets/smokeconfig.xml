@@ -33,6 +33,7 @@
     <signature>.*operator+.*\(.*,.*.*</signature>
     <signature>.*operator-.*\(.*,.*.*</signature>
     <signature>.*qHash.*\(.*,.*.*</signature>
+    <signature>.*qHash\(QHashDummyValue.*</signature>
 
     <signature>^QGraphicsLayoutItem\* QGraphicsLayoutItem::QGraphicsLayoutItem\(const QGraphicsLayoutItem&amp;\)$</signature>
     <signature>^(::)?QScopedPointer.*QScrollerProperties.*d(=)?$</signature>

@@ -78,6 +78,17 @@
     <signature>.*QSemaphoreReleaser\(QSemaphoreReleaser&amp;\)$</signature>
     <signature>.*registerNormalizedTypedef.*</signature>
 
+    <!-- Qt 6 comparison helper functions - these are friend functions not meant to be bound -->
+    <signature>.*\bis_eq\b.*</signature>
+    <signature>.*\bis_neq\b.*</signature>
+    <signature>.*\bis_lt\b.*</signature>
+    <signature>.*\bis_lteq\b.*</signature>
+    <signature>.*\bis_gt\b.*</signature>
+    <signature>.*\bis_gteq\b.*</signature>
+
+    <!-- Qt 6 deleted qHash functions -->
+    <signature>.*qHash\(QHashDummyValue.*</signature>
+
     <!-- call to deleted constructor of 'Class Name' -->
     <signature>.*QBasicTimer\(QBasicTimer&amp;\)$</signature>
 

@@ -33,3 +33,9 @@
 #include <QtCore/qcborvalue.h>
 #include <QtCore/qproperty.h>
 #include <QtCore/qabstractitemmodel.h>  // Defines QModelIndex, QPersistentModelIndex
+#include <QtCore/qitemselectionmodel.h>
+#include <QtCore/qidentityproxymodel.h>
+#include <QtCore/qabstractproxymodel.h>
+#include <QtCore/qsortfilterproxymodel.h>
+#include <QtCore/qconcatenatetablesproxymodel.h>
+#include <QtCore/qtransposeproxymodel.h>
